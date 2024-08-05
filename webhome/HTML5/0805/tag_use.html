@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- * Heading Condtent, 각 태그는 제목(Head) 역할을 부여하고 글자 크기와 함께 분류 -->
+  <div id="aaa">
+  <span>
+  h1 ~ h6는 Heading Content로 각 태그는 제목(Head) 역할을 부여하고 글자 크기로 목차 표현
+  <h1> Hello,World</h1>
+  <h2> Hello,World</h2>
+  <h3> Hello,World</h3>
+  <h4> Hello,World</h4>
+  <h5> Hello,World</h5>
+  <h6> Hello,World</h6>
+  </span>
+  <span>
+  <p>문단을 나눌때는 P 태그를 사용한다.</p>
+  <P>줄바꿈을 할때는 br 태그를 사용한다.<br>
+    br 태그는 닫지 않아도 동작하는 태그이지만, <br>
+    향후 호환성을 위해 br 태그도 닫아줘야 한다.
+  </P>
+  </span> 
+</div>
+
+  <pre>
+    pre 태그는 타이핑 한 그대로 출력되는 태그
+    public class                   HelloWorld{
+      public static void           main(String [] args){
+        // 줄바꿈과 공백이  자유로운 코드!
+      }
+    }
+  </pre>
+
+  <p> hr 태그는 수평선을 그리는 태그</p>
+  <hr color="red" size="5" width="100%">
+
+  <p> ol 태그는 순서가 있는 리스트를 만듬.</p>
+  <ol type ="I">
+    <li>ol의 type attribute로 값을 매길 형식을 정할 수 있다.</li>
+    <li>리스트 2</li>
+  </ol>
+
+  <p> ul 태그는 순서가 없는 리스트를 만든다.</p>
+  <ul type="circle">
+    <li>ul의 type은 HTML5부터 사용하지 않는다. </li>
+    <li>리스트 2</li>
+    <li>li는 List Item으로 ol과 ul 하위에 들어가는 요소</li>
+  </ul>
+
+
+  <dl>
+    dl 태그는 들여쓰기가 들어간 리스트이다.
+    <dt>dl 태그</dt>
+    <dd>들여쓰기로 구분된 리스트</dd>
+    <dt>dt에 용어를 적고</dt>
+    <dd>dd에 설명을 적는다.</dd>
+  </dl>
+
+  <figure>
+    figure 태그는 이미지와 같은 컨텐츠를 넣을때 사용하는 태그.
+    <img src = "https://media.istockphoto.com/id/1307863491/ko/%EC%82%AC%EC%A7%84/%EC%83%98%ED%94%8C-%EB%B3%B4%EB%93%9C%EB%A5%BC-%EB%B0%B0%EC%B9%98%ED%95%98%EB%8A%94-%EB%94%94%EC%9E%90%EC%9D%B4%EB%84%88.jpg?s=1024x1024&w=is&k=20&c=q6lb872pBfzGj1BkUtU_qmM-NnbTCDfAwUEN0Lc8NNM=">
+    <figcaption>figcaption은 이미지에 주석을 다는 태그이다.</figcaption>
+  </figure>
+
+  <div style="width:400px;height:100px; background-color: yellow;">div는 구역을 나누는 태그</div>
+  <div style="width:400px;height:100px; background-color: green">div 하나에 하나의 영역이 생긴다.</div>
+  <span style="width:400px;height:100px; background-color: yellow;"> span 태그는 크기 지정과 상관없이 Contents 만큼만 영역을 차지한다.</span>
+  <span style="width:400px;height:100px; background-color: green;"> 하나의 영역에 여러 span을 사용할 수 있다.</span>
+
+  <div>
+  <h1> Anchor Tag 연습</h1>
+  <dl> anchr 태그는 링크 연결을 위한 href 속성과 출력 방법인 target 속성이 있다.
+    <dt><a href="https://www.naver.com" target="_self">NAVER</a></dt>
+    <dd> target의 기본 출력은 "_self, 현재 페이지를 이동" 이다. </dd>
+    <dt><a href="https://www.nate.com" target="_blank">NATE</a></dt>
+    <dd> 새로운 탭으로 출력할 때는 "target=_blank"를 명시한다.</a></dd>
+    <dt><a href="/"> ## web root로 이동 ## </a></dt>
+    <dd> href의 경로를 지정하는 방법으로는 webRoot(/)를 기준으로 하는 절대 경로 </dd>
+    <dt><a href="./"> ## 상위 페이지로 이동 ##</a></dt>
+    <dd> 현재 페이지를 기준으로 하는 상대 경로가 있다.</dd>
+    <dt><a href="#aaa">## 상단으로 이동하기 ## </a></dt>
+    <dd>a 태그는 같은 페이지 내에서 id를 찾아서 이동할 수 있다.</dd>
+  </dl> 
+  </div>
+</body>
+</html>

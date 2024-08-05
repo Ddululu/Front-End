@@ -1,0 +1,4 @@
+!(tab)            : html 파일에서 ! (탭)으로 HTML 파일의 기본 양식을 자동 완성
+Shift + ALT + ↓   : 현재 줄을 아래에 복사
+ol>li*3           : ol(order list)하위에 li(리스트 요소) 3개 만들기
+a["href"]         : a 태그에 href 속성을 자동 완성 <a href="">가 바로 만들어진다.
