@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="./style.css" rel="stylesheet">
+  <title>HTML Embeded Contents</title>
+</head>
+<body>
+  <h1> HTML Embeded Contents</h1>
+  <p> img 태그는 페이지 내에 이미지를 첨부하기 위해 사용 </p>
+  <div>
+    <figure>
+      <img src="https://media.istockphoto.com/id/1307863491/ko/%EC%82%AC%EC%A7%84/%EC%83%98%ED%94%8C-%EB%B3%B4%EB%93%9C%EB%A5%BC-%EB%B0%B0%EC%B9%98%ED%95%98%EB%8A%94-%EB%94%94%EC%9E%90%EC%9D%B4%EB%84%88.jpg?s=1024x1024&w=is&k=20&c=q6lb872pBfzGj1BkUtU_qmM-NnbTCDfAwUEN0Lc8NNM=" width="20%" height="20%" alt="">
+      <figcaption>이미지는 URL 형식이기에 인터넷에 올라온 것을 소스로 사용할 수 있다.</figcaption>
+    </figure>
+  </div>
+
+  <div>
+    <figuer>
+      <img src="./images/cat.jpg" width="20%" height="20%">
+      <figcaption>웹루트 하위에 있는 로컬 이미지도 가져올 수 있다.</figcaption>
+      <br>
+      <img src="D:/cat.jpg" alt="D드라이브 밑에 이미지">
+      <figcaption>웹루트를 벗어나는 이미지는 가져올 수 없다.</figcaption> 
+    </figuer>
+  </div>
+
+  <p> iframe은 페이지 안에 새로운 페이지를 만드는 태그 </p>
+  <div>
+    <a href="../0805/tag_use.html" target="tag_">0805 - 스타일 적용<br></a>
+    <iframe src="../0805/tag_use.html" name="tag_" width="50%" height="50%"></iframe>
+  </div>
+  <br>
+  <p> 페이지나 이미지가 아닌 컨텐츠를 삽입하는 embed와 video 등등</p>
+  <p> embed는 object를 대체하는 태그로 대부분의 컨텐츠를 삽입 가능. <br>
+  대신 단순히 삽입만 하는거라 video나 audio가 가진 attribute는 사용 불가능.</p>
+  <embed src ="videos/chrome_japan.mp4">
+  <br>
+  <p>video는 영상을 삽입하는 태그로 현재는 mp4, WebM, Ogg 방식으로만 업로드 가능 </p>
+  <video preload controls autoplay loop muted width="200px" height="100px"u>
+    <source src ="videos/chrome_japan.mp4" type="video/mp4">
+  </video>
+</body>
+</html>

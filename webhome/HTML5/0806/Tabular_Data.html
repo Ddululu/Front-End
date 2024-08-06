@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <h1> Tabular Data </h1>
+  <h2> 테이블을 만들어 출력하기 </h2>
+  <pre> 
+    1. table 태그로 테이블의 틀을 만듬
+    2. tr 태그로 레코드의 틀을 만듬
+      1) th 태그로 레코드에 헤더를 생성 (이때부터 데이터가 들어감.)
+      2) td 태그로 레코드에 데이터를 생성 (이때부터 데이터가 들어감.) 
+  </pre>
+  <!--? border가 1이라면 테이블의 윤곽선을 넣어라, 기본은 "" (없음) -->
+  <table border="1">
+    <!-- ? tr은 테이블에 레코드를 생성. -->
+    <tr>
+      <!-- ? th는 테이블의 헤더 (속성)레코드라는 뜻 -->
+      <th witdh="100" align="center">MONTH</th>
+      <th witdh="100" align="center">WEEK</th> 
+      <th witdh="100" align="center">DATE</th>
+    </tr>
+    <tr>
+      <!-- ? td는 테이블의 데이터 레코드라는 뜻 -->
+      <td>August</td>
+      <td>MONDAY</td>
+      <td>2024-08-05</td>
+    </tr>
+    <tr>
+      <td>August</td>
+      <td>TUESDAY</td>
+      <td>2024-08-06</td>
+    </tr>
+  </table>
+
+  <h2> 테이블의 컬럼 레코드 별로 그룹화하여 스타일 바꾸기</h2>
+  <pre> 
+    1. 가로(레코드 별)로 그룹화를 할 때는 thead, tbody, tfoot 태그를 사용한다. (기본은 tbody)
+    2. 일반적으로 thead는 th 요소들을 그룹화할 때 사용
+      - thead > tr > th 요소들
+    3. tbody는 데이터 레코드들을 묶을 때 사용
+      - tbody > tr > td 요소들
+    5. tfoot은 마지막 데이터 레코드를 별도로 묶을 때 (데이터 레코드 합산 등) 사용
+      - tfoot > tr > td 마지막 요소 
+  </pre>
+  
+  <table border=1 align="center" width="600">
+  <thead>
+    <tr>
+      <th witdh="100" align="center">MONTH</th>
+      <th witdh="100" align="center">WEEK</th> 
+      <th witdh="100" align="center">DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>August</td>
+      <td>MONDAY</td>
+      <td>2024-08-05</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>August</td>
+      <td>TUESDAY</td>
+      <td>2024-08-06</td>
+    </tr>
+  </tfoot>
+  </table>
+  
+
+  <h2> 테이블의 열을 묶어 스타일 바꾸기 </h2>
+  <pre> 
+    1. 세로(컬럼 별)로 그룹화를 할 때는 colgroup 태그를 사용한다.
+    2. 일반적으로 colgroup은 첫번째 컬럼부터 적용.
+      - colgroup span="컬럼 수" style="적용할 스타일"
+    3. colgroup을 여러 번 적용할 때는 colgroup에 col 태그를 넣어 정의한다.
+      - colgroup> 
+          col span="1" style="background-color: gray">
+          col span="2" style="background-color: gainsboro">
+        /colgroup>
+  </pre>
+  <table border=1 align="center" width="600">
+    <colgroup> 
+      <col span="1" style="background-color: gray">
+      <col span="2" style="background-color: gainsboro">
+    </colgroup>
+    <tr>
+      <th witdh="100" align="center">MONTH</th>
+      <th witdh="100" align="center">WEEK</th> 
+      <th witdh="100" align="center">DATE</th>
+    </tr>
+    <tr>
+      <td>August</td>
+      <td>MONDAY</td>
+      <td>2024-08-05</td>
+    </tr>
+    <tr>
+      <td>August</td>
+      <td>TUESDAY</td>
+      <td>2024-08-06</td>
+    </tr>
+  </table>
+
+  <h2> 행 or 열이 합쳐진 테이블을 만들기 </h2>
+  <pre> 
+    1. table 태그로 테이블의 틀을 만듬
+    2. tr 태그로 레코드의 틀을 만듬
+      1) th 태그로 레코드에 헤더를 생성
+      2) td 태그로 레코드에 데이터를 생성
+    3. 테이블을 모두 채운 상태에서 공통 요소가 있는 컬럼으로 이동한다.
+    4. 컬럼을 rowspan(아래로 늘림), colspan(우로 늘림)을 이용해 늘려준다.
+    5. 늘린 방향의 컬럼을 그 수만큼 제거한다.
+  </pre>
+  <table border=1 align="center" width="600">
+    <tr>
+      <th witdh="100" align="center">MONTH</th>
+      <th witdh="100" align="center">WEEK</th> 
+      <th witdh="100" align="center">DATE</th>
+    </tr>
+    <tr>
+      <td rowspan="3">August</td>
+      <td>MONDAY</td>
+      <td>2024-08-05</td>
+    </tr>
+    <tr>
+      <!-- ? August가 공통 요소기 때문에 빈공간으로 만든다. -->
+      <td>TUESDAY</td>
+      <td>2024-08-06</td>
+    </tr>
+    <tr>
+      <!-- ? August가 공통 요소기 때문에 빈공간으로 만든다. -->
+      <td>WEDNESDAY</td>
+      <td>2024-08-07</td>
+    </tr>
+  </table>
+
+
+</body>
+</html>

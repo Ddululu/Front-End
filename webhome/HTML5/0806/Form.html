@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+  <h1> form 태그 </h1>
+  <h2> form 태그는 입력 양식을 감싸는 태그 </h2>
+<!-- ? form 태그는 서버로 데이터를 보내기 위한 태그로 action, method, enctype이 기본적으로 포함된다. -->
+  <form action="https://www.naver.com:443" method="GET" enctype="application/x-www-form-urlencoded">  
+      <fieldset style="width:700px"> <!-- ? Fieldset은 입력창을 카테고리로 묶기 위해 사용 -->
+        <legend>Basic Info</legend>
+      <p>
+        <!-- ? id는 서버에서 입력박스를 식별하기 위해 고유해야 한다. -->
+        <label for="username">Name : </label>
+        <input id="username" type="text" size="5" required/> <!-- ? required는 필수로 입력되도록 제한 -->
+      </p>
+      <p>
+        <label for="userage">Age : </label>
+        <input id="userage" type="number" max="60" />
+      </p>
+      <p>
+        <!-- ? radio 타입은 체크 방식의 선택지 중 한가지만 선택하도록 제한할 때 사용 --> 
+        <label for="gender">Gender : </label>
+        <input id="usergender" type="radio" name="gender" />MALE <!-- ? name 같고 value는 다르게 함으로 한 가지만 선택하도록 한다. -->
+        <input id="usergender" type="radio" name="gender" />FEMALE
+      </p>
+    </fieldset>
+    <fieldset style="width:700px">
+      <legend>Business Info </legend>
+      <p>
+        <label for="userid">ID : </label>
+        <input id="userid" type="text" size="20" maxLength="12" />
+      </p>
+      <p>
+        <label for="userpwd">Password : </label>
+        <input id="userpwd" type="text" size="20" maxlength="8" />
+      </p>
+      <p>
+        <!-- ? placeholder는 입력 양식을 보여주기 위해 사용하고, pattern은 입력 양식을 제한한다.-->
+        <label for="usertel">Telephone : </label>
+        <input id="usertel" type="tel" size="20" maxlength="13" 
+        placeholder="010-0000-0000" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"/> <!-- ? "[입력 범위]{글자수} " -->
+      </p>
+      <p>
+        <!-- ? list 형식은 입력을 제한하며 선택지를 제공할때 사용.-->
+        <label for="">Your Favorit Browser</label>
+        <input type="text" list="browser"> 
+        <!-- ?  datalist로 미리 선택 가능한 리스트를 만들고 id로 연결, value는 실제 넘어가는 데이터 text는 사용자에게 보여주는 내용 -->
+        <!-- * selected는 option의 기본 값으로 지정 -->
+        <datalist id="browser"> 
+          <option value="chrome" selected>Google Chrome</option> 
+          <option value="FireFox">Mozilla FireFox</option>
+          <option value="Safari">Apple Safari</option>
+          <option value="Opera">Opera opera</option>
+          <option value="Edge">Microsoft Edge</option>
+        </datalist>
+      </p>
+      <p>
+        <label for="">지원 날짜: </label>
+      <input type="date"></p>
+      <p>
+        <label for="">사진 : </label>
+        <input type="file">
+      </p>
+      <p>
+        <!-- ? 체크박스는 0개 이상 선택될 수 있고, 체크를 해제할 수 있는 것이 특징. -->
+        <label for="">Available Language : </label>
+        <input type="checkbox" name="language" value="C-Lang">C/C++ 언어 &nbsp; 
+        <input type="checkbox" name="language" value="Java">자바 &nbsp; 
+        <input type="checkbox" name="language" value="Python">파이썬 &nbsp; 
+        <input type="checkbox" name="language" value="JavaScript">자바스크립트 &nbsp; 
+        <input type="checkbox" name="language" value="React">리액트 &nbsp; 
+        <input type="checkbox" name="language" value="C#">C# &nbsp; 
+      </p>
+      <p>
+        <!-- ? textarea는 문자를 자유롭게 입력받는 입력박스 -->
+        <label for="">지원 동기 : </label><br>
+        <textarea name="" id="" rows="5" cols="40" placeholder="1000자 이내로 작성하세요."></textarea>
+      </p>
+    </fieldset>
+      <p>
+        <!-- ? input과 button은 사용자 단에서는 동일하게 보이지만, 자바스크립트에서 다르게 사용된다. -->
+        <input type="submit" value="전송">&nbsp;&nbsp;&nbsp;
+        <!-- <input type="reset" value="취소"> -->
+        <button type="reset">취소</button>
+      </p>
+  </form>
+  <p> </p>
+</body>
+</html>
