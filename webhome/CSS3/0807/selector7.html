@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALL SELECTOR</title>
+  <style type="text/css">
+    @import url("selector.css");
+  </style>
+</head>
+</head>
+<body>
+  <h1>성공하는 사람들의 7가지 습관</h1>
+<!--! Child SELECTOR는 특정 요소 하위의 바로 하위에 속한 요소들에 스타일을 적용 */ -->
+  <pre> 
+    ol > li { color: red; }
+  </pre>
+  <ol>
+    <li>습관1: 자신의 삶을 주도하라</li>
+    <ol>
+      <li>인생의 코스를 스스로 선택하라.</li>
+      <li>성공하는 사람들은 자신이 할 수 없는 일에 집착하거나 외부의 힘에 반응하지 않는다.</li>
+      <li>할 수 있는 일에 집중하며 자신의 선택과 결과에 책임을 진다.</li>
+    </ol>
+    <li>습관2: 끝을 생각하며 시작하라</li>
+    <li>습관3: 소중한 것을 먼저하라</li>
+    <li>습관4: 윈 - 윈을 생각하라</li>
+    <li>습관5: 먼저 이해하고 다음에 이해시켜라</li>
+    <li>습관6: 시너지를 내라</li>
+    <li>습관7: 끊임없이 쇄신하라</li>
+  </ol>
+
+  <!--! /Descendant SELECTOR는 특정 요소 하위의 모든 요소들에 스타일을 적용 -->
+  <pre>
+    ul li {color:black}
+  </pre>
+    
+  <button>8월 7일 홈으로!</button>
+</body>
+</html>

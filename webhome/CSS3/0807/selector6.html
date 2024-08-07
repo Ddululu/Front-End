@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ID Selector</title>
+  <style type="text/css">
+    @import url("selector.css");
+  </style>
+</head>
+<body>
+  <h1 class="aaa">성공하는 사람들의 7가지 습관</h1>
+  <!--! Adjacent Sibling SELECTOR  >> 기준이 되는 요소는 제외.-->
+  <pre>
+    #base1 ~ li {background-color: azure; color: red}
+    id가 base1 인 요소와 같은 레벨의 li 태그들에게만 모두 적용.
+  </pre>
+  <ol>
+    <li id ="base1">습관1: 자신의 삶을 주도하라</li>
+    <li>습관2: 끝을 생각하며 시작하라</li>
+    <li>습관3: 소중한 것을 먼저하라</li>
+    <li>습관4: 윈 - 윈을 생각하라</li>
+    <li>습관5: 먼저 이해하고 다음에 이해시켜라</li>
+    <li>습관6: 시너지를 내라</li>
+    <li>습관7: 끊임없이 쇄신하라</li>
+  </ol>
+  <!--! Adjacent Sibling SELECTOR는 인접 형제 요소에 스타일을 적용 -->
+  <pre>
+    #base2 + li { color: orange; }
+  </pre>
+  
+  <ol>
+    <li id ="base2">습관1: 자신의 삶을 주도하라</li>
+    <li>습관2: 끝을 생각하며 시작하라</li>
+    <li>습관3: 소중한 것을 먼저하라</li>
+    <li>습관4: 윈 - 윈을 생각하라</li>
+    <li>습관5: 먼저 이해하고 다음에 이해시켜라</li>
+    <li>습관6: 시너지를 내라</li>
+    <li>습관7: 끊임없이 쇄신하라</li>
+  </ol>
+  <button>8월 7일 홈으로!</button>
+</body>
+</html>
