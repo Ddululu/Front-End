@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>JavaScrip의 Object</h1>
+  <p>
+    <button name="red_button" type="button" onclick="bgChange(this)">RED</button> &nbsp;&nbsp;
+    <button name="blue_button" type="button" onclick="bgChange(this)">BLUE</button> &nbsp;&nbsp;
+  </p>
+  <script>
+    function bgChange(evt){
+      console.log(evt.innerHTML); // 태그 사이에 있는 문자열을 가져오는 InnerHTML
+        if (evt.innerHTML=="RED"){
+          evt.innerHTMl="BLUE";
+        }else if(evt.innerHTML=="BLUE"){
+          evt.innerHTML="RED";
+        }
+      }
+        // 이 구조에서 let은 지역변수 이기 때문에 private의 역할을 한다. -> 값이 바깥으로 나갈 수 없음.
+      let Student = function(p_name, p_kor, p_eng, p_mat){
+        // 자바 스크립트는 로컬 변수와 파라미터를 같은 이름으로 받을 수 없다.
+        let name = parseInt(p_name);
+        let kor = parseInt(p_kor);
+        let eng = parseInt(p_eng);
+        let mat = parseInt(p_mat);
+        // let name = window.prompt("이름은: ?");
+        // let kor = parseInt(window.prompt("국어는: ?"));
+        // let eng = parseInt(window.prompt("영어는: ?"));
+        // let mat = parseInt(window.prompt("수학은: ?"));
+        let tot = kor+eng+mat;
+
+        this.getName= function(){return name;} // 여기서 this는 현재 Object를 의미.
+        this.setName = function(parm1){
+          name = parm1
+        }
+        this.getTot= function(){return tot;}
+      }
+      let chulsu = new Student; // 모든 파라미터가 null인 Student 인스턴스 생성.
+      console.log(chulsu.name); //undefined
+      console.log(chulsu.getName()); // 김철수
+      chulsu.setName('이영희'); 
+      console.log(chulsu.getName()); // 이영희
+      console.log(chulsu.getTot());
+
+      let now = new Date();
+      console.log(now.toLocaleString());
+    
+      let arrays = [4,3,5,7,3,5,7,8,7,];
+      arrays.sort();
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> 자바스크립트의 함수 </h1>
+  <!-- * 1. Declerative/Static Function, 이벤트 처리할 때 사용 -->
+  <script>
+    // 자바스크립트 호이스팅: calc라는 함수는 스크립트가 실행될 때 높은 우선순위로 생성된다.
+    console.log(calc(4,8)); // 호이스팅에 의해 함수보다 위에 있지만 오류가 출력되지 않음.  
+    function calc(a,b){
+      return a*b;
+    }
+  </script>
+
+  <!-- * 2. Dynamic/Anonimous Function, 잘 사용하지는 않음. 함수를 변수처럼 사용할 수 있는 점이 중요 포인트 -->
+<!-- * 함수형 Object를 이용해 함수를 생성하고, 새로운 변수에 함수의 주소를 저장하면 타입이 함수가 된다. -->
+  <script>
+    const func = new Function('a','b',"return a*b"); 
+    // console.log(typeof func); //function
+    const aaa = func; 
+    // console.log(typeof aaa); // function
+    console.log(aaa(4,8));
+  </script>
+<!-- * 3. Function Object에 넣는 대신 함수 Literal을 이용해 빠르게 선언 -->
+  <script>
+    const func2 = function(a,b){return a*b}
+    console.log(func2(4,9));
+
+    // 화살표 함수는 자바의 람다와 유사하다.
+    // function을 생략하고 {입력(arg1,arg2,..)} => {코드 블록 혹은 리턴 코드}와 같은 형태로 선언한다.
+    const func3 = (a,b) => a*b;
+    func3(4,3);
+  </script>
+
+  <!-- * Nested Function과 Closures(함수가 함수를 리턴) -->
+  <script>
+    outer = (greeting) => { return inner = (whom) => { console.log(greeting+ ',' +whom); } }
+    const result = outer('Hello');
+    console.log(result); 
+    // outer의 호출 결과로 inner 가 리턴되었다.
+    // inner에는 (whom) => { return console.log(greeting+ ',' +whom); } 함수가 대입되어 있다.
+    // 즉 함수가 리턴되었기 때문에 outer가 리턴된 순간 inner 함수가 호출되어 내부 함수가 살아 있는 상태를 Closures라고 한다.
+    console.log(result('jimin')); 
+    // 즉 리턴된 함수를 통해 내부 함수에 접근할 수 있다. => Return 하지 않는 내부 함수는 외부에서 사용 불가능.
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> JavaScrip Operator </h1>
+  자바스크립트의 타입은 typeof()로 확인할 수 있다.
+  <script>
+    let str = "hello, World"; console.log(typeof(str));     // String
+    let age = 28; console.log(typeof(age));                 // number
+    let bool = true; console.log(typeof(bool));             // boolen
+    let undefine; console.log(typeof undeine);              // undefined
+    let nul=null; console.log(typeof nul);                  // obj
+    let obj1=[1,2,3]; console.log(typeof obj1);             //object
+    let obj2={name:"jimin", age:28}; console.log(typeof obj2);//object
+    let obj3=str+age; console.log(typeof obj3);               //String (문자 + 무언가는 문자 "Char 형의 배열형태" 로 나타난다)
+    let obj4=str+obj1; console.log(typeof obj4);               //String (문자)
+    let obj5=() => {console.log('hello world')};  console.log(typeof obj5); //function
+
+    let car = {name:"sonata", price:300000, maker:"HyunDai"};
+    console.log(car);
+    delete car.price;  // delete는 배열의 멤버를 제거하는 함수?
+    console.log(car);
+    delete car;
+    console.log(car);
+
+    // 자바스크립트는 자유로운 형변환이 이루어지기 때문에 값만 비교하는 ==과 값과 타입까지 비교하는 ===이 있다.
+    if(3 == "3") console.log("같다.");
+    if(3 === "3") console.log("같다.");
+    else console.log("다르다.");
+  </script>
+</body>
+</html>

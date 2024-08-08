@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> JavaScript Primitive Type </h1>
+  <p>String 타입은 Primitive Type인데, 
+  String Object의 메소드인 toUppercCase()에 접근할 수 있는 이유는
+  자바스크립트에서는 primitive type을 object처럼 변환해주는 Wrapper Object가 있기 때문이다. </p>
+  
+  <p>Primitive type에 메소드를 사용하면 자바스크립트 엔진은 자동으로 Strign 객체를 생성하여 메소드에 접근 할 수 있게 합니다. </p>
+  <script>
+    let name = `Michael`;
+    let age = '28';
+    // 자바스크립트에서 format 형으로 문자열 안에 변수를 넣으려면 백 틱(`)으로 감싸준다.  
+    document.write(`Your name is ${name}.<br>`);
+    name = name.toUpperCase();
+    document.write(`Your name is ${name}.<br>`);
+  </script>
+</body>
+</html>

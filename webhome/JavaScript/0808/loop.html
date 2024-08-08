@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> 자바스크립트 반복문</h1>
+  <script>
+    let fruits = ['사과', '배', '감', '망고'];
+    // for of 문은 자바의 Enhanced For문과 동일하다.
+    // fruits의 요소만큼 반복
+    for(let a of fruits){
+      console.log(a)
+    }
+    // 객체를 접근할때는 for in 문을 사용한다.
+    // for in을 사용하면 객체의 Key 값을 가져온다.
+    let car = {maker: '현대', price:30000000, name:'소나타'};
+    for(const key in car){
+      console.log(key);
+      console.log(`${key} ==> ${car[key]}`);
+    }
+  </script>
+</body>
+</html>

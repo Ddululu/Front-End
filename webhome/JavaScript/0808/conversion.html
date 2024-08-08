@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> 자바스크립트에서 형변환 </h1>
+  <p>
+    <!--! 데이터를 text (문자형)으로 입력받았다.  -->
+    <lable>Age : </lable>
+    <input type="text" placeholder="Enter your age..." id="userage">
+    <button type="button" onclick="myClick()">Click Me!!</button>
+  </p>
+  <script>
+    function myClick(){
+      // 처음 입력받은 값을 그냥 넣으면 "문자열" + 10으로 문자열 더하기가 된다.
+      let age = document.getElementById('userage').value;
+      
+      console.log(`당신의 나이는 ${age +10}입니다.`);
+
+      // 문자열을 숫자형으로 바꾸는 방법은 두 가지가 있다.
+      // 1. Number()메소드를 이용해 number 타입으로 강제 형변환. -> 형변환이 불가능한 문자가 포함되면 NaN 리턴 ex) 12 살 -> NaN
+      // 2. parseInt() 메소드를 이용해 문자열에서 숫자를 추려 반환. -> 형변환이 불가능한 문자가 포함되어도 숫자 추출 ex) 12 살 -> 12
+      age2 = Number(age);
+      age3 = parseInt(age);
+      console.log(`age2=${age2+10} age3=${age3+10}`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> Variable Scope</h1>
+<ol>
+<dl>
+  <li> <p>중복 선언 가능 여부</p>
+<dt>var는 중복해서 선언(+초기화)가 가능하다. </dt>
+<dd>이 경우, 마지막에 할당된 값이 변수에 저장된다.
+<br>기존에 선언해둔 변수의 존재를 까먹고, 값을 재할당하게 되는 등의 실수가 발생하기 쉽다.</dd>
+​
+<dt>const, let : 중복 선언 불가능 </dt>
+<dd>이미 선언한 변수를 다시 선언할 경우, 에러가 발생한다.
+<br>var에 비해서 코드의 안정성을 높여줄 수 있는 방식으로, 다른 언어를 쓰던 사람들게도 익숙할 것이다.</dd></li>
+
+<li> <p>할당 가능 여부</p>재
+var, let : 값의 재할당이 가능한 변수다.
+변수 선언 및 초기화 이후에 반복해서 다른 값을 재할당 할 수 있다.
+​
+const : 값의 재할당이 불가능한 상수다.
+const는 상수를 선언하는 키워드다.
+처음에 선언 및 초기화하고 나면 다른 값을 재할당 할 수 없다.
+​
+* var 또는 let과 달리, const 선언에서는 반드시 값을 선언과 동시에 정의해야 한다
+* 재할당이 필요없는 경우, const를 사용해 불필요한 변수의 재사용을 방지하고, 재할당이 필요한 경우 let을 사용하는 것이 좋음.</li>
+
+3. 변수 스코프 유효범위
+스코프란 유효한 참조 범위를 말한다.
+예를 들어, 함수 내부에서 선언된 변수는 함수 내부에서만 참조가 가능하다.
+​
+자바스크립트는 var로 선언한 변수의 스코프와 let, const로 선언한 변수의 스코프가 다르다.
+ 
+var : 함수 레벨 스코프(function-level scope)
+var는 함수 내부에 선언된 변수만 지역변수로 한정하며, 나머지는 모두 전역변수로 간주한다.
+​
+자바스크립트애서는
+if문, for문, while문, try/catch 문 등의 코드 블럭{ ... } 내부에서 var로 선언된 변수를 전역 변수로 간주한다.
+그래서 블럭 외부에서도 어디에서나 참조할 수 있다.
+​
+let, const : 블록 레벨 스코프(block-level scope)
+let, const는 함수 내부는 물론, if문이나 for문 등의 코드 블럭{ ... } 에서 선언된 변수도 지역변수로 취급한다. 당연히 함수 내부에서 선언된 변수도 외부에서 참조할 수 없다.
+​
+			
+        
+Tip
+* 정리하자면,var는 함수 내부에 선언된 변수만 지역 변수로 인정하는 함수 레벨 스코프이다.let, const는 모든 블록 내부에서 선언된 변수까지 지역변수로 인정하는 블록 레벨 스코프이다.
+</dl>
+</ol>
+  <!-- !결론 : 
+  ! var는 스크립트 전역적으로 영향을 받기 때문에 사용하지 않는다.
+  ! let과 const는 코드블럭 내에서만 동작하는 지역변수로 사용할 수 있다.
+  * Before: 28 28 28
+  * Local : 48 48 48
+  * After : 48 28 28 -->
+  <script>
+    var var1 =28;
+    let let1 =28;
+    const cont1 =28;
+    console.log("Before:", var1, let1, cont1);
+    if(true){
+      var var1 = 48;
+      let let1= 48;
+      const cont1 = 48;
+      console.log("Local :", var1, let1, cont1);
+    }
+    console.log("After :", var1, let1, cont1);
+  </script>
+</body>
+</html>
