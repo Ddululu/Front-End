@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> JavaScript's Module </h1>
+  
+  <!--* ES5에서는 모듈을 구성했을 때, 같은 변수명을 사용 시 덮어씌워지는 것이 문제. -->
+  <!--* ES5 -->
+  <script src="js/module-A.js"></script>
+  <script src="js/module-B.js"></script>
+  <script> getTotal();</script>
+
+  <!-- * ES6부터는 ESM을 이용해 모듈을 별도로 관리
+  * 1. 모듈이란 어플리케이션을 구성하는 개별적인 요소로서, 재사용 가능한 코드 조각.
+  * 2. 모듈은 기능을 중심으로 파일 단위로 분리한다.
+  * 3. ES6에서는 파일 이름의 확장자를 .mjs로 사용하기를 권장한다. => 컴파일러가 브라우저가 인지할 수 있도록 변환해준다.
+  * 4. 특징 
+       * 1) 유지 보수성 
+       * 2) 재사용성
+       * 3) 네임스페이스화
+  * 5. ES6에서는 ESM(ECMA Script Module)이라고 한다.
+  * 6. 내보내는 쪽은 Export, 가져오는 쪽은 Import 키워드를 사용한다.
+  * 7. export keyword
+      * 1) 자신만의 scope를 갖는다.
+      * 2) 따라서 모듈 내부에서 선언한 변수, 함수 등 모든 식별자는 모듈 외부에서 참조할 수 없다.
+      * 3) 모듈 내부에서 선언한 식별자를 다른 모듈에서 재사용하게 ㅏㅎ려면 export 키워드를 사용한다.
+      * 4) Syntax : export {변수명, 함수명, ...};
+  * 8. import keyword
+      * 1) 다른 모듈에서 공개한 식별자를 자신의 모듈에서 로드하려면 import keyword를 사용한다.
+      * 2) Syntax : import {변수명, 함수명, ...} from (경로/모듈명)
+-->
+  <!--! 모듈은 반드시 type을 모듈로 명시해줘야 한다.  -->
+  <script type="module" src="js/main.mjs"></script>
+  <script type="module">
+    import {log, error} from './js/log.mjs';
+    log('hello world!');
+    error('hihi');
+  </script>
+
+  <!-- * 
+  * 1. export default
+  * 모듈에서 단 하나의 식별자만 export 하려면 default keyword를 사용한다.
+  * 2. export default keyword를 사용할 때에는 반드시 let, var, const 키워드를 사용할 수 없다.
+  * 3. default keyword와 함께 export한 모듈은 {} 없이 임의의 이름으로 import 한다.
+  * 4. 동일한 모듈이 여러 곳에서 사용하더라도 모듈은 호출 시 단 한번만 실행한다.  
+  -->
+  <script type="module" src="./js/user1.mjs"></script>
+  <script type="module" src="./js/user2.mjs"></script>
+<!-- ! 출력: 
+!    jone 
+!    Michael  
+!    user1과 user2가 같은 모듈을 사용하는데, user1에서 admin.name = 'Michael'; 로  import 한 변수의 값을 바꿨기 때문에 user2에서는 이 값을 가져와 출력하였다. ==> 동일한 모듈은 한번만 실행된다.(한개만 만들어진다.)-->
+
+<!-- * default function인 greeting은 {} 없이 import 하고 임의의 이름인 greet로 변경할 수 있다.  -->
+ <script type="module">
+  import greet from './js/admin.mjs';
+  console.log(greet('Michael'));
+ </script>
+<!-- * TIP. 일반적으로 HTML에서 모듈을 import 하는 구조
+          * HTML => import (./js/app.js) 
+            * app.js => import (./js/나머지.js) -->
+
+<!--  -->
+<script type="module">
+  import {subtract} from './js/example.js'; // 확장자 생략 시, 현재는 404 Error (html만 찾음.)
+  console.log(additional(4,9)); // import에서 가져오지 않은 함수는 사용 불가. 
+  console.log(subtract(4,9)); // export에서 내보내지 않은 함수는 사용 불가. 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*. Rest Parameter : 함수의 매개변수(parameter) 이름 앞에 ...(Spread operator)를 붙여서 정의한 매개변수*/
+    
+    //1. Rest Parameter는 함수에 전달된 argumnet들을 배열로 전달받는다.
+    function sum(...args){
+      console.log(Array.isArray(args));
+      
+      let total = 0;
+      for(const arg of args) total += arg;
+      return total;
+    }
+    console.log(sum(1,2)); //3
+    console.log(sum(1,2,3)); // 6
+    console.log(sum(1,2,3,4)); // 10
+    console.log(sum(1,2,3,4,5)); // 15
+
+    //2. 함수에서 일반 매개변수와 Rest Parameter를 함께 사용 가능. 단, 항상 오른쪽에 위치하고 하나만 선언.
+    function sum2(num, ...nums){
+      console.log(num); // 1
+      console.log(nums); // Array(4) // 2,3,4,5
+    } 
+    sum (1,2,3,4,5);
+  </script>
+</body>
+</html>

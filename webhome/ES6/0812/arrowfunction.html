@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const name = '황신욱';
+   
+    /* Declartive/Static Function */
+    function Function1(name){ return `이름:${name}` };
+    
+    /* Function Literal*/
+    const Function2 = (name) => {`이름:${name}`};
+
+    /* Function literal2*/
+    // 매개변수가 1개라면 소괄호() 생략 가능
+    // 코드블럭이 한줄이라면 중괄호 {} 생략 가능
+    const get = param => ({sports: '축구'});
+    const result = get; // 함수를 변수에 대입할때는 소괄호() 생략
+    console.log(result()); // 함수 변수로 코드를 실행할때는 () 소괄호를 붙이고, 함수 자체를 볼때는 소괄호 생략
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> Rest parameter VS arguments </h1>
+  <script>
+    // 1. ES5에서는 함수를 정의할때 가변인자의 경우 arguments 객체를 이용하여 인수를 전달 받았다.
+    // 2. arguments 객체는 함수 호출시 전달된 인수들의 정보를 담고 있는 순회가 가능한 "유사 배열" 객체였다.
+
+    function sum(){
+      console.log(typeof arguments); // Object
+      console.log(Array.isArray(arguments)); // false, 객체이다.
+      console.log(arguments); // Arguments(3) [1,2,3, etc...]
+      return Array.from(arguments).reduce((acc, item) => acc+item, 0) // 배열로 바꿔줘야 Array의 reduce 메소드 사용 가능
+    } 
+    console.log(sum(1,2,3)); //6
+
+    // 3. ES6에서 나온 가변 인자  함수는 Rest Parameter를 이용해 "배열"로 전달받는다.
+    function sum2(...args){
+      return args.reduce((acc,item) => acc+item, 0);
+    }
+    console.log(sum2(1,2,3,4,5)) // 15
+  </script>
+
+
+</body>
+</html>

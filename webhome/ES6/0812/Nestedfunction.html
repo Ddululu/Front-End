@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 함수 안에 함수가 있는 Nested Function.*/
+    /* 함수가 호출될 때 안에 있는 함수도 호출된다.*/
+    // const person = function(name){
+    //   return {
+    //     getName : function(){
+    //       return name;
+    //     }
+    //   }
+    // }('Michael');
+    const person = (name => ({getName: () => name }))('Michael');
+
+    console.log(person.getName()); // Michael
+    console.log(typeof person); // object = { getName : Function } 
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const student = {
+      firstName: '한',
+      lastName:'지민',
+      name: '한지민',
+      age: 28,
+      address: {
+        city: '서울시 영등포구 선유로9길 30',
+        zipcode: '12345'
+      }
+    }
+    const {name, age, address} = student;  // student를 해체하여 개별 저장, 객체기 때문에 name은 name으로 대응.
+    console.log(`name=${name} age=${age} address=${address.city}`)
+    const { address: {zipcode}} = student; // 객체안의 객체 요소도 변수에 대입할 수 있다.
+    console.log(zipcode); // 12345
+    const printUser = ({name})=>{
+      console.log(name); // 객체를 넘겨 받을 수 있다.
+    }
+    printUser({id:'jimin',name:'한지민'}); // 한지민
+
+    const array = [1,2,3,4,5]; // 배열은 입력된 순서 기준으로 값이 대응된다.
+    const [a, ...b] = array; // a에는 1이 들어가고 b에는 [2,3,4,5]
+    const [,, ...c] = array; // 빈칸에 1과 2가 들어가고 c에는 [3,4,5]
+
+    // Default Parameter와 연동하기
+    const [d=10 ,e=20] = [undefined,5]; // d에 값이 안들어오면 10으로 대체
+    console.log(d,e);
+
+    // Default Parameter로 이용해 하나의 argument를 두 개의 파라미터로 받음.
+    const [f,g=f*2] = [5]; 
+  </script>
+  <h1> Value Swapping </h1>
+  <script>
+    // ES5까지는 임시로 변수를 선언해 값을 넣었다.
+    var v1= 10, v2=20;
+    var v3= v2; v2=v1; v1=v2; // 하나의 변수가 더 필요했음
+
+    // ES6 부터는 Destructuring을 이용해 바로 변환
+    let v1 = 10, v2=20;
+    [v1,v2] = [v2,v1];
+    console.log(v1,v2); // 20 10
+  </script>
+  <h1> 객체 Destructuring</h1>
+  <script>
+    // Destructuring을 배열이나 객체로 전달하고 할 때 반드시 배열은 배열로, 객체는 객체로 전달받아야 한다.
+    function func( {b,a,c=a+b} ){ // 객체가 입력되므로 객체로 받는다.
+      console.log(a,b,c) // 객체의 해체 기준은 위치와 상관 없이 Key 기준이다. but. 배열은 index(입력된 순서) 기준이다.
+    }
+    func({a:100, b:200})
+
+    const {x, ...rest} = {x:1, y:2, z:3} // x=1, rest = {y:2, z:3}, rest는 객체로 입력 받았다.
+
+    
+  </script>
+</body>
+</html>

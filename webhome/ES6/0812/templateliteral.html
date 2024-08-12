@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Template Literal</title>
+</head>
+<body>
+  <script>
+    /* ES6 에서는 문자열 출력을 위해 ``(Back tick)을 허용한다.*/
+    /* ` `안에서 ${}를 사용하여 JavaScript 표현식 사용이 가능하게 한다. */
+    const num1=5, num2=6, num3=7
+    
+    //JavaScript(ES5)
+    console.log('num1= '+num1+ 'num2= '+num2+ 'num3= '+num3 );
+    
+    //ES6
+    console.log(`num1 = ${num1} num2 = ${num2} num3 = ${num3}`); //template literal (형식을 가진 문자열로 표현)
+  </script>
+</body>
+</html>
