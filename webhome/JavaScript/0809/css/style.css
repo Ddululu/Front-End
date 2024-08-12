@@ -1,0 +1,70 @@
+h1 {
+  width:150px;
+  text-align: center;
+  background-color: rgb(255,255,255,1);
+  margin: 10px 10px 10px 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.box {
+  border:1px solid green; float:left;
+  border-width: 3px;
+  width:300px;
+  height:200px;
+  font-size: small;
+  margin: -30px 20px 5px 5px;
+  padding: 50px 20px 20px 20px;
+}
+.name {
+  width:auto;
+  float:right;
+  text-align:right;
+  margin-right:40px;
+}
+
+.name input{
+  width:50px;
+}
+
+ol {
+  counter-reset: item;
+  padding-left: 0;
+}
+
+li{
+  counter-increment: item;
+  width:260px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+li::before {
+  content: counter(item) ". ";
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+li input{
+  width:50px;
+  margin-left:auto;
+}
+
+button{
+  display:block;
+  width:50px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#output {
+  visibility:hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DOM Model</h1>
+  <p>
+    <label for="item">Item Name:</label>
+    <input type="text" id="txtItem" name="item">
+  </p>
+  <hr />
+  <h2> Item List </h2>
+  <ul>  </ul>
+  <script>
+    document.querySelector('#txtItem').addEventListener('change',(evt)=>{
+      let li = document.createElement('li'); //<li></li>
+      let text = document.createTextNode(evt.target.value); // STRING
+      li.appendChild(text) //<li>STRING</li>
+      document.querySelector('ul').appendChild(li); // ul 밑에 li를 자식으로 추가
+      evt.target.value=""; // 입력 창을 다시 빈칸으로
+    })
+  </script>
+</body>
+</html>

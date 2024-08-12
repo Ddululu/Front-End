@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>계산퀴즈</h1>
+  <div class="box" id="input"> 
+    <span>이름과 계산의 답을 입력한 후 완료 단추를 눌러 주세요.</span>
+    <p class="name">이름: <input type="text" id="name" /></p>
+    <div>
+      <ol>
+        <li>
+          <span>5 + 6 = </span>
+          <input type="number" name="exam" id="exam1" class="result"/></li>
+        <li>
+          <span>8 - 3 =</span>
+          <input type="number" name="exam" id="exam2" class="result"/></li>
+        <li>
+          <span>7 X 6 =</span> 
+          <input type="number" name="exam" id="exam3" class="result"/></li>
+        <li>
+          <span>15 + 3 = </span>
+          <input type="number" name="exam" id="exam4" class="result"/></li>
+        <li>
+          <span>8 + 6 - 3 X 2 ÷ 2 =</span>
+          <input type="number" name="exam" id="exam5" class="result"/></li>
+      </ol>
+      <button type="button" id="complete">완료</button>
+    </div>
+  </div>
+    <div class= box id="output">
+    </div>
+  <script src="js/javascript.js"></script>
+</body>
+</html>

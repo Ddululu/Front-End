@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ol { list-style-type:none;}
+    ol > li { display: inline;}
+  </style>
+</head>
+<body>
+  <h1> Prevent Default Event </h1>
+  <ol>
+    <li><a href="img/apple.jpg" id="apple" onclick="myclick()">Apple</a> | </li>
+    <li><a href="#" id="melon">Melon</a> | </li>
+    <li><a href="#" id="mango">Mango</a></li>
+  </ol>
+  <hr />
+  
+  <div id="result">
+    <figure>
+      <img id="myimg">   
+    </figure>
+  </div>
+
+  <script>
+    const alinks= document.getElementsByTagName('a') // a 태그 요소들을 배열로 가져옴.
+    for(let i=0; i< alinks.length; i++){
+      alinks[i].addEventListener('click',myclick,false);
+    }
+    function myclick(evt){
+      // console.log(evt.target.id);
+      evt.preventDefault(); // Sytax: event.preventDefault()
+      // Blocking default click handling
+      // HTMl에서 click했을 때 기본적으로 동작하던 것을 막는다.
+
+      const img = document.getElementById('myimg');
+      switch(evt.target.id){
+        case "apple": img.setAttribute('src','img/apple.jpg'); break;
+        case "mango": img.setAttribute('src','img/mango.jpg'); break;
+        case "melon": img.setAttribute('src','img/melon.jpg'); break;
+      }
+    }
+  </script>
+</body>
+</html>
