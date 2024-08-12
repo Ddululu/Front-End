@@ -1,0 +1,16 @@
+# : comments
+
+# 특정 확장자 무시 like .txt 
+
+# 특정 확장자 무시 + 일부 파일 허용 like !파일명.txt
+
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+
+# 특정 폴더를 모두 무시
+node_modules/
+
+
+# doc 바로 하위 폴더의 모든 .txt를 무시  like doc/*.txt
+
+# doc 하위 폴더를 포함한 모든 pdf를 무시 like doc/**/*.pdf
